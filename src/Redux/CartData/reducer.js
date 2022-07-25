@@ -15,7 +15,7 @@ export const cartReducer = (store = initState,{type,payload})=>{
             }
             case CARTDATA_SUCCESS :
                 return{
-                    ...Store,
+                    ...store,
                     loading:false,
                     cartData:[...payload] ,
 

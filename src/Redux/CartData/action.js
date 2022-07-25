@@ -1,4 +1,4 @@
-
+import axios from "axios" ;
 
 export const CARTDATA_LOADING = "CARTDATA_LOADING" ;
 export const  CARTDATA_SUCCESS = "CARTDATA_SUCCESS";
@@ -21,7 +21,7 @@ export const cartdata_failure = ()=>({
 export const fetchCartdata = ()=>(dispatch)=>{
     dispatch(cartdata_loading())
     axios.get("http://localhost:9000/cart")
-    .then((res)=>dispatch(cartdata_sucess(res.data)))
+    .then((res)=>dispatch(cartdata_success(res.data)))
     .catch(()=>cartdata_failure());
 } 
 
