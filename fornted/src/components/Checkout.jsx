@@ -41,7 +41,7 @@ export const Checkout = () => {
       toast.error("Please enter something", { position: "top-center" });
     } else {
       axios
-        .post("http://localhost:8000/Checkout", {
+        .post("https://srvmern.herokuapp.com/Checkout", {
           name: input.Name,
           Address: input.Address,
           pincode: input.Pincode,

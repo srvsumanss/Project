@@ -26,7 +26,7 @@ export const Card = () => {
     handleCartDetail();
   }, []);
   const handleCartDetail = () => {
-    axios.get("http://localhost:8000/cartproduct").then(({ data }) => {
+    axios.get("https://srvmern.herokuapp.com/cartproduct").then(({ data }) => {
       const newData = data.map((product) => ({
         ...product,
         qty: 1,
@@ -38,7 +38,7 @@ export const Card = () => {
  
 
   const handleRate = (id) => {
-    axios.delete(`http://localhost:8000/cartproduct/${id}`).then((res) => {
+    axios.delete(`https://srvmern.herokuapp.com/cartproduct/${id}`).then((res) => {
       handleCartDetail();
     });
   };

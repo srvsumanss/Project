@@ -28,7 +28,7 @@ export const Signup = () => {
       };
 
       axios
-        .post("http://localhost:8000/signup", payload)
+        .post("https://srvmern.herokuapp.com/signup", payload)
         .then((res) => {
           toast.success("Register SuccessFull", { position: "top-center" });
           setTimeout(() => {

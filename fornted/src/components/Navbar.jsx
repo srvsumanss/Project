@@ -87,7 +87,7 @@ export const Navbar = () => {
   }, []);
 
   const handleCartDetail = () => {
-    axios.get("http://localhost:8000/cartproduct").then(({ data }) => {
+    axios.get("https://srvmern.herokuapp.com/cartproduct").then(({ data }) => {
       setData(data);
     });
   };

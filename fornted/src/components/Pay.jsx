@@ -26,7 +26,7 @@ export const Debit = () => {
   const handlesubmit = async (e) => {
     e.preventDefault();
    
-      axios.post("http://localhost:8000/payment", data ).then(({ data }) => {
+      axios.post("https://srvmern.herokuapp.com/payment", data ).then(({ data }) => {
         alert("payment secuessfully");
         navigate("/checkout")
       }).catch((err)=>{

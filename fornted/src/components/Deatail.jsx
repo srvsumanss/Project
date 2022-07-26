@@ -27,7 +27,7 @@ export const Detail = () => {
     handleCartDetail();
   }, []);
   const handleCartDetail = () => {
-    axios.get("http://localhost:8000/cartproduct").then(({ data }) => {
+    axios.get("https://srvmern.herokuapp.com/cartproduct").then(({ data }) => {
       const newData = data.map((product) => ({
         ...product,
         qty: 1,
@@ -37,13 +37,13 @@ export const Detail = () => {
   };
 
   const handleUserDetails = () => {
-    axios.get("http://localhost:8000/checkout").then(({ data }) => {
+    axios.get("https://srvmern.herokuapp.com/checkout").then(({ data }) => {
       setUserDetails(data);
     });
   };
 
   const handleRate = (id) => {
-    axios.delete(`http://localhost:8000/cartproduct/${id}`).then((res) => {
+    axios.delete(`https://srvmern.herokuapp.com/cartproduct/${id}`).then((res) => {
       handleCartDetail();
     });
   };

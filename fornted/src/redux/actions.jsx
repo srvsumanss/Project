@@ -27,7 +27,7 @@ export const navbar_cart=(data)=>({
 })
 
 export const navCart = () => (dispatch) => {
-  axios.get("http://localhost:8000/cartproduct").then(({data})=>{
+  axios.get("https://srvmern.herokuapp.com/cartproduct").then(({data})=>{
     dispatch(navbar_cart(data))
   }).then((res) => console.log("navv"))
 }

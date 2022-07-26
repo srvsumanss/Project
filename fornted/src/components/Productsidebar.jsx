@@ -20,7 +20,7 @@ const ProductSidebar = () => {
   const handleSortedData = (query) => {
     axios
       .get(
-        `http://localhost:8000/sortbycategory?sorttype=category&sortdirection=${query}`
+        `https://srvmern.herokuapp.com/sortbycategory?sorttype=category&sortdirection=${query}`
       )
       .then(({ data }) => {
         dispatch(setproducts(data));
@@ -28,13 +28,13 @@ const ProductSidebar = () => {
   };
   const handleSorted = (order) => {
     axios
-      .get(`http://localhost:8000/sort?sorttype=price&sortdirection=${order}`)
+      .get(`https://srvmern.herokuapp.com/sort?sorttype=price&sortdirection=${order}`)
       .then(({ data }) => {
         dispatch(setproducts(data));
       });
   };
   const handleAllData = () => {
-    axios.get(`http://localhost:8000/products`).then(({ data }) => {
+    axios.get(`https://srvmern.herokuapp.com/products`).then(({ data }) => {
       dispatch(setproducts(data));
     });
   };

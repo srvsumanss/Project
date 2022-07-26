@@ -20,7 +20,7 @@ export const Productdetail = () => {
   let { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/products/${id}`).then(({ data }) => {
+    axios.get(`https://srvmern.herokuapp.com/products/${id}`).then(({ data }) => {
       dispatch(selectedproduct(data));
 
 
@@ -28,7 +28,7 @@ export const Productdetail = () => {
     });
   }, []);
   useEffect(() => {
-    axios.get(`http://localhost:8000/cartproduct`).then(({ data }) => {
+    axios.get(`https://srvmern.herokuapp.com/cartproduct`).then(({ data }) => {
       setArr(data)
       if(arr.filter((e)=> e._id = store._id)){
         setFlag(true)
@@ -48,7 +48,7 @@ export const Productdetail = () => {
       image: cart.image,
     };
     axios
-      .post("http://localhost:8000/cartproduct", payload)
+      .post("https://srvmern.herokuapp.com/cartproduct", payload)
       .then(({ data }) => {
         dispatch(navCart());
         dispatch(navCart());

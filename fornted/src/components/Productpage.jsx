@@ -19,7 +19,7 @@ export const Productpage = () => {
   
 
   useEffect(() => {
-    axios.get("http://localhost:8000/products").then(({ data }) => {
+    axios.get("https://srvmern.herokuapp.com/products").then(({ data }) => {
       dispatch(setproducts(data));
      
     });
